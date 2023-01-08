@@ -42,4 +42,6 @@ print("Initiating upload to S3...")
 s3.upload_file(file_to_upload, 
                 'dianaawsbucketwcd1',
                 file_name)
+# alternative example using AWS CLI:
+# aws s3 cp file_to_upload 's3://dianaawsbucketwcd1/file_to_upload'
 print("Done!")
