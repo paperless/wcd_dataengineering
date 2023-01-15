@@ -10,7 +10,12 @@ echo "Running python script"
 python3 ./run.py
 RC1=$? 
 if [ ${RC1} == 0 ]
-then echo "Successfully finished processing"
-else echo "Error occurred: " ${RC1}
+then aws s3 cp result.json s3://dianaawsbucketwcd1/input/result.json
+else echo "Error occurred in python script: " ${RC1}
+fi
+RC2=$?
+if [ ${RC2} == 0 ]
+then echo "Successfully finished all tasks."
+else echo "Error. Could not upload file to s3."
 fi
 deactivate
