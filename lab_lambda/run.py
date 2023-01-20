@@ -24,6 +24,7 @@ with eng.connect() as con:
         mystr += ('"' + str(row["CustomerID"]) + '": ' + str(row["SumSales"]) + ', ')
 
 mystr = mystr[:-2] + '}'
+# print(mystr)
 result = json.loads(mystr)
 with open('result.json', 'w') as f:
     json.dump(result, f)
