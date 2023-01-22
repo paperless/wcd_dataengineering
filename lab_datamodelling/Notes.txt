@@ -1,0 +1,3 @@
+use snowsql to run ETL.sql
+!source ETL.sql
+
